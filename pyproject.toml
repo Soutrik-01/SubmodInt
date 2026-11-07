@@ -1,0 +1,74 @@
+[project]
+name = "submod-int"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "matplotlib>=3.10.7,<4.0.0",
+    "numpy>=2.3.5,<3.0.0",
+    "pyserde[toml]>=0.25.1,<0.26.0",
+    "scipy>=1.16.3,<2.0.0",
+    "submodlib-py",
+    "tensorboard>=2.20.0,<3.0.0",
+    "torch>=2.9.1,<3.0.0",
+    "tqdm>=4.67.1,<5.0.0",
+    "typed-clap>=0.11.0,<0.12.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.8.22,<0.9.0"]
+build-backend = "uv_build"
+
+[tool.uv]
+add-bounds = "major"
+
+[tool.uv.build-backend]
+module-name = ["models", "data"]
+module-root = ""
+
+[tool.ruff]
+line-length = 99
+
+[tool.ruff.format]
+preview = true
+docstring-code-format = true
+
+[tool.ruff.lint]
+preview = true
+select = ["ARG", "B", "C4", "E", "EM", "EXE", "F", "I", "ISC003", "NPY", "PD",
+          "PERF", "PIE", "PLE", "PT", "PYI", "Q004", "FURB", "RET", "RUF",
+          "SIM", "UP", "W", "YTT"]
+ignore = ["UP007", "UP045", "E701", "SIM108"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"notebooks/*.py" = ["E302", "E305"]
+
+[tool.basedpyright]
+typeCheckingMode = "standard"
+reportDeprecated = true
+reportDuplicateImport = true
+reportIgnoreCommentWithoutRule = true
+reportMatchNotExhaustive = true
+reportUnnecessaryCast = true
+reportUnnecessaryComparison = true
+reportUnnecessaryContains = true
+reportUnnecessaryIsInstance = true
+
+[tool.uv.sources]
+submodlib-py = { git = "https://github.com/decile-team/submodlib" }
+
+[dependency-groups]
+dev = [
+    "basedpyright>=1.34.0,<2.0.0",
+    "ipython>=9.9.0,<10.0.0",
+    "marimo>=0.19.1,<0.20.0",
+    "ruff>=0.14.7,<0.15.0",
+    "watchdog>=6.0.0,<7.0.0",
+]
+
+[tool.marimo.runtime]
+watcher_on_save = "autorun"

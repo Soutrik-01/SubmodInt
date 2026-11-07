@@ -1,0 +1,130 @@
+[common]
+num-samples = 20000
+ground-set-size = 2000
+max-set-size = 200
+feature-dimension = 3
+num-epochs = 400
+early-stopping-patience = 30
+
+[SubmodInt-L1]
+model = "submod-int"
+num-layers = 1
+no-m-1 = true
+interaction-fn = "b"
+transform-hidden-dims = [32]
+modular-hidden-dims = [32]
+fac-loc = { lr = 1e-3, lr-decay-factor = 0.7, lr-patience = 5,  batch-size = 64,  weight-decay = 1e-4 }
+g-cut   = { lr = 1e-3, lr-decay-factor = 0.7, lr-patience = 10, batch-size = 128, weight-decay = 1e-4 }
+int-2-1 = { lr = 1e-3, lr-decay-factor = 0.7, lr-patience = 10, batch-size = 128, weight-decay = 1e-4 }
+log     = { lr = 5e-4, lr-decay-factor = 0.7, lr-patience = 5,  batch-size = 64,  weight-decay = 1e-4 }
+log-det = { lr = 1e-3, lr-decay-factor = 0.7, lr-patience = 10, batch-size = 128, weight-decay = 1e-4 }
+sqrt    = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 10, batch-size = 128, weight-decay = 1e-4 }
+
+[SubmodInt-L2]
+model = "submod-int"
+num-layers = 2
+no-m-1 = true
+interaction-fn = "b"
+transform-hidden-dims = [32]
+modular-hidden-dims = [32]
+fac-loc           = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 5,  batch-size = 64,  weight-decay = 1e-4 }
+g-cut             = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 5,  batch-size = 128, weight-decay = 0 }
+g-cut-8           = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 10, batch-size = 128, weight-decay = 1e-4 }
+int-2-1           = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 10, batch-size = 128, weight-decay = 1e-4 }
+log               = { lr = 3e-4, lr-decay-factor = 0.7, lr-patience = 5,  batch-size = 128, weight-decay = 1e-4 }
+log-det           = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 10, batch-size = 128, weight-decay = 1e-4 }
+log-times-log-det = { lr = 1e-3, lr-decay-factor = 0.7, lr-patience = 10, batch-size = 128, weight-decay = 1e-4 }
+log-times-sqrt    = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 5,  batch-size = 64,  weight-decay = 1e-4 }
+sqrt              = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 10, batch-size = 128, weight-decay = 1e-4 }
+
+[SubmodInt-L3]
+model = "submod-int"
+num-layers = 3
+no-m-1 = true
+interaction-fn = "b"
+transform-hidden-dims = [32]
+modular-hidden-dims = [32]
+fac-loc = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 5,  batch-size = 64,  weight-decay = 1e-4 }
+g-cut   = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 5,  batch-size = 128, weight-decay = 0 }
+log     = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 5,  batch-size = 64,  weight-decay = 1e-4 }
+log-det = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 10, batch-size = 128, weight-decay = 1e-4 }
+sqrt    = { lr = 1e-3, lr-decay-factor = 0.7, lr-patience = 10, batch-size = 128, weight-decay = 1e-4 }
+
+[SubmodInt-L5]
+model = "submod-int"
+num-layers = 5
+no-m-1 = true
+interaction-fn = "b"
+transform-hidden-dims = [32]
+modular-hidden-dims = [32]
+fac-loc = { lr = 1e-3, lr-decay-factor = 0.7, lr-patience = 10, batch-size = 128, weight-decay = 1e-4 }
+g-cut   = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 5,  batch-size = 128, weight-decay = 0 }
+log     = { lr = 5e-4, lr-decay-factor = 0.7, lr-patience = 10, batch-size = 128, weight-decay = 1e-4 }
+log-det = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 10, batch-size = 128, weight-decay = 1e-4 }
+sqrt    = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 10, batch-size = 128, weight-decay = 1e-4 }
+
+[SubmodInt-L7]
+model = "submod-int"
+num-layers = 7
+no-m-1 = true
+interaction-fn = "b"
+transform-hidden-dims = [32]
+modular-hidden-dims = [32]
+fac-loc = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 5,  batch-size = 64,  weight-decay = 1e-4 }
+g-cut   = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 10, batch-size = 128, weight-decay = 1e-4 }
+log     = { lr = 1e-3, lr-decay-factor = 0.7, lr-patience = 10, batch-size = 128, weight-decay = 1e-4 }
+log-det = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 5,  batch-size = 64,  weight-decay = 1e-4 }
+sqrt    = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 5,  batch-size = 64,  weight-decay = 1e-4 }
+
+[SubmodInt-L10]
+model = "submod-int"
+num-layers = 10
+no-m-1 = true
+interaction-fn = "b"
+transform-hidden-dims = [32]
+modular-hidden-dims = [32]
+fac-loc = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 5,  batch-size = 128, weight-decay = 1e-4 }
+g-cut   = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 10, batch-size = 128, weight-decay = 1e-4 }
+log     = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 5,  batch-size = 64,  weight-decay = 1e-4 }
+log-det = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 10, batch-size = 128, weight-decay = 1e-4 }
+sqrt    = { lr = 5e-4, lr-decay-factor = 0.7, lr-patience = 5,  batch-size = 64,  weight-decay = 1e-4 }
+
+[SubmodInt_F-L2]
+model = "submod-int"
+num-layers = 2
+no-m-1 = true
+interaction-fn = "b"
+transform-hidden-dims = [32]
+modular-hidden-dims = [32]
+fix-continuous-transforms = true
+fac-loc = { lr = 1e-3, lr-decay-factor = 0.7, lr-patience = 5, batch-size = 64,  weight-decay = 1e-4 }
+g-cut   = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 5, batch-size = 128, weight-decay = 1e-4 }
+int-2-1 = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 5, batch-size = 128, weight-decay = 0 }
+log-det = { lr = 1e-3, lr-decay-factor = 0.7, lr-patience = 5, batch-size = 64,  weight-decay = 1e-4 }
+
+[DSF-L1]
+model = "dsf"
+num-rnn-steps = 1
+dsf-readout = true
+hidden-layers = [10, 10]
+
+[DSF-L2]
+model = "dsf"
+num-rnn-steps = 2
+
+[FlexSubNet]
+model = "flex-sub-net"
+hidden-layers = [16, 16]
+
+[SetTransformer]
+model = "st"
+hidden-layers = [8]
+
+[EDSF]
+model = "edsf"
+hidden-layers = [24, 24]
+
+[DeepSet]
+model = "ds"
+in-d = 4
+hidden-layers = [30, 20]

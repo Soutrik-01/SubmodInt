@@ -1,0 +1,135 @@
+[common]
+epochs = 5
+num_valid_init_models = 3
+
+[SubmodInt-L1]
+method = "SubmodInt"
+submodint_layers = 1
+num_valid_init_models = 1
+in_d_umnn = 3
+submodint_width = 32
+submodint_raw_modular = true
+submodint_gate = true
+learning_rate = 1e-4
+weight_decay = 1e-4
+apparel = { interaction_fn = "b", submodint_count_init = 1, submodint_freeze_modular = true, submodint_gate_lr = 1e-3 }
+bath    = { interaction_fn = "b", submodint_count_init = 1, submodint_modular_lr = 1e-4, submodint_gate_lr = 1e-4 }
+bedding = { interaction_fn = "b", submodint_count_init = 1, submodint_modular_lr = 1e-4, submodint_gate_lr = 1e-4 }
+diaper  = { interaction_fn = "b", submodint_count_init = 1, submodint_freeze_modular = true, submodint_gate_lr = 1e-4 }
+feeding = { interaction_fn = "a", submodint_count_init = 1, submodint_modular_lr = 1e-4, submodint_gate_lr = 1e-3 }
+gear    = { interaction_fn = "b", submodint_count_init = 1, submodint_modular_lr = 1e-4, submodint_gate_lr = 1e-4 }
+health  = { interaction_fn = "b", submodint_count_init = 1, submodint_modular_lr = 1e-4, submodint_gate_lr = 1e-4 }
+media   = { interaction_fn = "b", submodint_modular_lr = 1e-2, submodint_gate_lr = 1e-3 }
+
+[SubmodInt-L2]
+method = "SubmodInt"
+submodint_layers = 2
+in_d_umnn = 3
+submodint_width = 32
+submodint_raw_modular = true
+submodint_count_init = 1
+submodint_gate = true
+learning_rate = 1e-4
+weight_decay = 1e-4
+apparel = { interaction_fn = "a", submodint_freeze_modular = true, submodint_gate_lr = 1e-3 }
+bath    = { interaction_fn = "b", submodint_modular_lr = 1e-4,     submodint_gate_lr = 1e-4 }
+bedding = { interaction_fn = "b", submodint_freeze_modular = true, submodint_gate_lr = 1e-4 }
+diaper  = { interaction_fn = "a", submodint_freeze_modular = true, submodint_gate_lr = 1e-3 }
+feeding = { interaction_fn = "b", submodint_modular_lr = 1e-4,     submodint_gate_lr = 1e-3 }
+gear    = { interaction_fn = "a", submodint_modular_lr = 1e-4,     submodint_gate_lr = 1e-3 }
+health  = { interaction_fn = "b", submodint_modular_lr = 1e-4,     submodint_gate_lr = 1e-4 }
+media   = { interaction_fn = "a", submodint_modular_lr = 1e-4,     submodint_gate_lr = 1e-3 }
+
+[SubmodInt-L3]
+method = "SubmodInt"
+submodint_layers = 3
+num_valid_init_models = 1
+in_d_umnn = 3
+submodint_width = 32
+submodint_raw_modular = true
+submodint_gate = true
+learning_rate = 1e-4
+weight_decay = 1e-4
+apparel = { interaction_fn = "b", submodint_count_init = 1, submodint_freeze_modular = true, submodint_gate_lr = 1e-4 }
+bath    = { interaction_fn = "a", submodint_count_init = 1, submodint_modular_lr = 1e-4, submodint_gate_lr = 1e-4 }
+bedding = { interaction_fn = "b", submodint_count_init = 1, submodint_modular_lr = 1e-3, submodint_gate_lr = 1e-4 }
+diaper  = { interaction_fn = "b", submodint_count_init = 1, submodint_freeze_modular = true, submodint_gate_lr = 1e-3 }
+feeding = { interaction_fn = "b", submodint_modular_lr = 3e-3, submodint_gate_lr = 1e-3 }
+gear    = { interaction_fn = "a", submodint_count_init = 1, submodint_freeze_modular = true, submodint_gate_lr = 1e-3 }
+health  = { interaction_fn = "a", submodint_count_init = 1, submodint_modular_lr = 1e-4, submodint_gate_lr = 1e-4 }
+media   = { interaction_fn = "b", submodint_count_init = 1, submodint_freeze_modular = true, submodint_gate_lr = 1e-3 }
+
+[SubmodInt-L5]
+method = "SubmodInt"
+submodint_layers = 5
+num_valid_init_models = 1
+in_d_umnn = 3
+submodint_width = 32
+submodint_raw_modular = true
+submodint_gate = true
+learning_rate = 1e-4
+weight_decay = 1e-4
+apparel = { interaction_fn = "a", submodint_count_init = 1, submodint_freeze_modular = true, submodint_gate_lr = 1e-3 }
+bath    = { interaction_fn = "b", submodint_count_init = 1, submodint_modular_lr = 1e-4, submodint_gate_lr = 1e-4 }
+bedding = { interaction_fn = "a", submodint_count_init = 1, submodint_freeze_modular = true, submodint_gate_lr = 1e-4 }
+diaper  = { interaction_fn = "b", submodint_count_init = 1, submodint_freeze_modular = true, submodint_gate_lr = 1e-4 }
+feeding = { interaction_fn = "b", submodint_count_init = 1, submodint_modular_lr = 1e-3, submodint_gate_lr = 1e-4 }
+gear    = { interaction_fn = "a", submodint_count_init = 1, submodint_freeze_modular = true, submodint_gate_lr = 1e-3 }
+health  = { interaction_fn = "a", submodint_count_init = 1, submodint_modular_lr = 1e-4, submodint_gate_lr = 1e-4 }
+media   = { interaction_fn = "b", submodint_count_init = 1, submodint_modular_lr = 1e-4, submodint_gate_lr = 1e-4 }
+
+[SubmodInt-L7]
+method = "SubmodInt"
+submodint_layers = 7
+num_valid_init_models = 1
+in_d_umnn = 3
+submodint_width = 32
+submodint_raw_modular = true
+submodint_gate = true
+learning_rate = 1e-4
+weight_decay = 1e-4
+apparel = { interaction_fn = "b", submodint_count_init = 1, submodint_freeze_modular = true, submodint_gate_lr = 1e-3 }
+bath    = { interaction_fn = "a", submodint_count_init = 1, submodint_modular_lr = 1e-4, submodint_gate_lr = 1e-4 }
+bedding = { interaction_fn = "b", submodint_count_init = 1, submodint_freeze_modular = true, submodint_gate_lr = 1e-3 }
+diaper  = { interaction_fn = "b", submodint_count_init = 1, submodint_freeze_modular = true, submodint_gate_lr = 1e-4 }
+feeding = { interaction_fn = "a", submodint_modular_lr = 3e-3, submodint_gate_lr = 1e-4 }
+gear    = { interaction_fn = "b", submodint_count_init = 1, submodint_modular_lr = 1e-4, submodint_gate_lr = 1e-4 }
+health  = { interaction_fn = "b", submodint_count_init = 1, submodint_modular_lr = 1e-4, submodint_gate_lr = 1e-4 }
+media   = { interaction_fn = "b", submodint_count_init = 1, submodint_modular_lr = 1e-4, submodint_gate_lr = 1e-4 }
+
+[SubmodInt-L10]
+method = "SubmodInt"
+submodint_layers = 10
+num_valid_init_models = 1
+in_d_umnn = 3
+submodint_width = 32
+submodint_raw_modular = true
+submodint_gate = true
+learning_rate = 1e-4
+weight_decay = 1e-4
+apparel = { interaction_fn = "b", submodint_count_init = 1, submodint_modular_lr = 1e-4, submodint_gate_lr = 1e-3 }
+bath    = { interaction_fn = "b", submodint_count_init = 1, submodint_modular_lr = 1e-4, submodint_gate_lr = 1e-3 }
+bedding = { interaction_fn = "a", submodint_count_init = 1, submodint_freeze_modular = true, submodint_gate_lr = 1e-4 }
+diaper  = { interaction_fn = "b", submodint_count_init = 1, submodint_freeze_modular = true, submodint_gate_lr = 1e-4 }
+feeding = { interaction_fn = "b", submodint_modular_lr = 3e-3, submodint_gate_lr = 1e-4 }
+gear    = { interaction_fn = "b", submodint_count_init = 1, submodint_modular_lr = 1e-4, submodint_gate_lr = 1e-4 }
+health  = { interaction_fn = "b", submodint_count_init = 1, submodint_modular_lr = 1e-4, submodint_gate_lr = 1e-4 }
+media   = { interaction_fn = "a", submodint_count_init = 1, submodint_modular_lr = 1e-4, submodint_gate_lr = 1e-4 }
+
+[FlexSubNet]
+method = "neural_subm_one_level"
+hidden_layers_umnn = 50
+in_d_umnn = 3
+
+[DSF]
+method = "DSF"
+in_d_umnn = 3
+
+[SetTransformer]
+method = "SetTransformer"
+hidden_layers_umnn = 3
+
+[DeepSet]
+method = "DeepSet"
+hidden_layers_umnn = 50
+in_d_umnn = 3

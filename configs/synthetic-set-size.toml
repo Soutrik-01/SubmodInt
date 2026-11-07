@@ -1,0 +1,23 @@
+[common]
+num-samples = 20000
+ground-set-size = 4096
+feature-dimension = 3
+num-epochs = 400
+early-stopping-patience = 30
+
+[SubmodInt-L2]
+model = "submod-int"
+num-layers = 2
+no-m-1 = true
+interaction-fn = "b"
+transform-hidden-dims = [32]
+modular-hidden-dims = [32]
+128  = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 5,  batch-size = 64,  weight-decay = 1e-4 }
+256  = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 5,  batch-size = 64,  weight-decay = 1e-4 }
+512  = { lr = 2e-3, lr-decay-factor = 0.7, lr-patience = 10, batch-size = 128, weight-decay = 1e-4 }
+1024 = { lr = 1e-3, lr-decay-factor = 0.7, lr-patience = 10, batch-size = 128, weight-decay = 1e-4 }
+2048 = { lr = 5e-4, lr-decay-factor = 0.7, lr-patience = 10, batch-size = 128, weight-decay = 1e-4 }
+
+[SetTransformer]
+model = "st"
+hidden-layers = [8]

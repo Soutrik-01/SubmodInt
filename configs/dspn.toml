@@ -1,0 +1,28 @@
+[common]
+n_epochs = 500
+eval_every = 25
+patience = 100
+min_delta = 0.005
+anneal_epochs = 25
+
+[DSF]
+model_type = "DSPN"
+
+[SubmodInt]
+model_type = "submodint"
+extra = "--submodint_gamma 1"
+
+[SubmodInt_F]
+model_type = "submodint_f"
+extra = "--submodint_gamma 1"
+
+[Hybrid]
+model_type = "hybrid"
+extra = "--submodint_gamma 1 --hybrid_w_init 0.1"
+
+[DeepSet]
+model_type = "deepset"
+
+[SetTransformer]
+model_type = "set_transformer"
+extra = "--bsz 40 --accumulation_steps 3"
